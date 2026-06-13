@@ -14,19 +14,30 @@ st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
 
-html, body, [class*="css"] {
+/* ── Força off-white em todos os containers do Streamlit ── */
+html, body { background-color: #F7F6F2 !important; }
+
+[class*="css"],
+[data-testid="stAppViewContainer"],
+[data-testid="stAppViewContainer"] > section,
+[data-testid="stAppViewContainer"] > section > div,
+[data-testid="block-container"],
+.stApp, .main, .block-container {
+    background-color: #F7F6F2 !important;
     font-family: 'DM Sans', sans-serif;
+    color: #1A1A2E;
 }
 
-.main { background-color: #F7F6F2; }
-
-[data-testid="stAppViewContainer"] {
-    background: #F7F6F2;
+[data-testid="stTabs"] > div:first-child,
+[data-testid="stTabsContent"] {
+    background-color: #F7F6F2 !important;
 }
 
-[data-testid="stHeader"] {
-    background: transparent;
-}
+[data-testid="stSidebar"] { background: #EDEDEA !important; }
+[data-testid="stHeader"]  { background: transparent !important; }
+[data-testid="stTabs"]    { border: none !important; }
+
+p, span, div, label { color: inherit; }
 
 .dashboard-header {
     background: #1A1A2E;
